@@ -13,6 +13,7 @@ export default function TimeChallenge({ title, targetTime }) {
   function handleStart() {
     timer.current = setTimeout(() => {
       setTimerExpired(true);
+      dialog.current.open();
     }, targetTime * 1000);
 
     setTimerStarted(true);
@@ -23,7 +24,7 @@ export default function TimeChallenge({ title, targetTime }) {
   return (
     <>
     
-    { timerExpired &&  <ResultModal  ref={dialog} targetTime={targetTime} result="lost" />}
+      <ResultModal  ref={dialog} targetTime={targetTime} result="lost" />
     <section className="challenge">
       <h2>{title}</h2>
       {timerExpired && <p> You Lost!</p>}
