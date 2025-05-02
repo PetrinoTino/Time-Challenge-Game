@@ -6,8 +6,7 @@ export default function TimeChallenge({ title, targetTime }) {
   const dialog = useRef();
   const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
 
-  const timerIsActive =
-    timeRemaining > 0 && timeRemaining < targetTime * 1000;
+  const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
 
   useEffect(() => {
     if (timeRemaining <= 0) {
